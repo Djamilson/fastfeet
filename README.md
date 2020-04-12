@@ -7,6 +7,8 @@ Projeto FastFeet, desenvolvido para o gerenciamento de entrega de encomendas, cr
 O Frontend que é o sistema web foi criado paginações com navegação e na parte de entregas foi desenvolvido o filtro por encomendas canceladas.  Também, o sistema é responsivo para diversos tamanhos de telas.  
 
 
+![](./imagens/orders.png)
+
 ## Setup
 
 > Install yarn on your system: [https://yarnpkg.com/en/docs/install](https://yarnpkg.com/en/docs/install)
