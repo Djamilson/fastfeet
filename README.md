@@ -1,22 +1,24 @@
-## Requests
+## Description
 
-Aplicações desenvolvidas no sistema operacional Ubuntu 18.04.4 LTS 64 bits.
+Aplicações desenvolvidas no sistema operacional Ubuntu 18.04.4 LTS 64 bits. Logo, o mobile não foi testado no Sistema IOS, somente no Android.
 
-Projeto FastFeet, desenvolvido para o gerenciamento de entrega de encomendas, criado as aplicações BACKEND, FRONTEND e MOBILE. Considerando que, quem acessa o sistema, recebe encomenda e entrega encomendas são pessoas, foi estruturado o banco de dados para que o email seja único para cada pessoa. Uma pessoa pode ter vários fones e pode definir o principal, assim como o endereço.
+Projeto FastFeet, desenvolvido para o gerenciamento de entrega de encomendas, aplicações BACKEND, FRONTEND e MOBILE. Considerando que, quem acessa o sistema, recebe encomenda e entrega encomendas são pessoas, foi estruturado o banco de dados para que o email seja único para cada pessoa. Uma pessoa pode ter vários fones e pode definir o principal, assim como o endereço. Porém essas features seram desenvolvida no futuro.
+Visto que algumas vezes tem-se a necessidade de adicionar algumas informações extras, foi criado o campo de observação no cadastro de encomenda. Também, houve a necessidade de criar o fone para o entregado e cliente, para que se tenha mais de uma forma de entrar em contato.   
+
+No Mobile foi colocado a opção de aceitar os termos de uso para que o app possa ser utilizado, caso usuário não aceite não será possível usar o aplicativo.
 
 O Frontend que é o sistema web foi criado paginações com navegação e na parte de entregas foi desenvolvido o filtro por encomendas canceladas.  Também, o sistema é responsivo para diversos tamanhos de telas.  
 
+![](./imagens/fastfeet1.png)
+![](./imagens/fastfeet2.png)
+![](./imagens/fastfeet5.png)
 
-![](./imagens/orders.png)
-
-![](orders.png)
-
-
-## Setup
+## Install yarn
 
 > Install yarn on your system: [https://yarnpkg.com/en/docs/install](https://yarnpkg.com/en/docs/install)
 
->Install o NodeJS
+
+## Install o NodeJS
 
 ```sh
 $ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
@@ -24,13 +26,14 @@ $ sudo apt-get install -y nodejs
 ```
 > Install docker on your system: [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/)
 
-> Install postgres
+
+### `Install postgres`
 ```sh
 $ docker run --name database -e POSTGRES_PASSWORD=123456 -p 5432:5432 --restart always -d postgres
 ```
 > Config database postgres
 ```sh
-##criando a base de dados
+### `Criando a base de dados`
 $ docker exec -i -t database /bin/sh
 $ su postgres
 $ psql
@@ -43,12 +46,12 @@ $ exit
 $ exit
 ```
 
-> Install mongodb
+### `Install mongodb`
 ```sh 
 $ docker run --name mongo -p 27017:27017 --restart always -d mongo
 ```
+### `Install redis`
 
-> Install redis
 ```sh
 $ docker run -d \
   -h redis \
@@ -60,17 +63,13 @@ $ docker run -d \
   redis:alpine /bin/sh -c 'redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}' 
 ```
 
-### `Install`
-
-> Clone
+### `Clone`
 
 ```sh
 $ git clone https://github.com/Djamilson/fastfeet.git
 $ cd fastfeet
 ```
-## Dependencies
-
-> Backend
+### `Backend`
 
 ```sh
 $ cd fastfeet/backend
@@ -79,7 +78,9 @@ $ yarn sequelize db:migrate
 $ yarn sequelize db:seed:all
 $ yarn dev
 ```
-> Config backend 
+
+### `Config backend`
+
 Copie e cole o arquivo .env_exemple e renomei para .env e configure todas as variáveis
 
 > S3 e envio de email 
@@ -91,8 +92,7 @@ Também foi utilizado – Amazon Simple Storage Service (S3 ...
 
 Todas essas variáveis devem ser configuradas no arquivo .env;
 
-
-> Projecto WEB
+### `Projecto WEB`
 
 ```sh
 $ cd fastfeet/frontend
@@ -103,7 +103,7 @@ $ yarn start
 
 Dentro da pasta src/_config deve-se editar o arquivo host.js e colocar o IP do servidor/backend.
 
-> Projecto Mobile
+### `Projecto Mobile`
 
 ```sh
 $ cd fastfeet/mobile
