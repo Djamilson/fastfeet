@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+<!-- tela de fundo, background-->
+<item
+   android:drawable="@color/primary"/>
+
+<!-- Logo -->
+<!-- <item
+        android:width="260dp"
+        android:height="260dp"
+        android:drawable="@drawable/screen"
+        android:gravity="center"
+        /> -->
+
+<ImageView
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:src="@drawable/screen" />
+
+<!-- icon_text e a logo-->
+
+
+
+</layer-list>
+
+
+
+
+
+
