@@ -1,0 +1,32 @@
+export default {
+  third: '#7D40E7',
+  nine: '#999999',
+
+  white: '#F5f5f5',
+  white_: '#FFF',
+  fourteen: '#F8F9FD',
+  dark: '#444444',
+  regular: '#666',
+  primary: '#7159c1',
+  second: '#ab59c1',
+  fifth: '#FFEFD5',
+  darker: '#111',
+  dez: '#030303',
+  onze: '#000000',
+  fourth: '#eee',
+
+  twelve: '#DDD',
+  six: 'rgba(255, 255, 255, 0.6)',
+  sixX: '#999',
+  serven: '#ccc',
+  light: '#C3C3C3',
+  sixteen: '#C1C1C1',
+  bluer: '#7D40E7',
+  red: '#E74040',
+  gargoylegas: '#FCDE4B',
+  blue: '#00f',
+  green: '#82BF18',
+  green_: '#4BA52D',
+
+  transparent: 'rgba(0, 0, 0, 0)',
+};
