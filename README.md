@@ -1,92 +1,109 @@
-# CONTRIBUTING
+## Requests
+
+Aplicações desenvolvidas no sistema operacional Ubuntu 18.04.4 LTS 64 bits.
+
+Projeto FastFeet, desenvolvido para o gerenciamento de entrega de encomendas, criado as aplicações BACKEND, FRONTEND e MOBILE. Considerando que, quem acessa o sistema, recebe encomenda e entrega encomendas são pessoas, foi estruturado o banco de dados para que o email seja único para cada pessoa. Uma pessoa pode ter vários fones e pode definir o principal, assim como o endereço.
+
+O Frontend que é o sistema web foi criado paginações com navegação e na parte de entregas foi desenvolvido o filtro por encomendas canceladas.  Também, o sistema é responsivo para diversos tamanhos de telas.  
 
 
 ## Setup
 
 > Install yarn on your system: [https://yarnpkg.com/en/docs/install](https://yarnpkg.com/en/docs/install)
 
-### Install dependencies
-
-> Only required on the first run, subsequent runs can use `yarn` to both
-bootstrap and run the development server using `yarn develop`.
-Since this starter using the [netlify-dev](https://www.netlify.com/products/dev/#how-it-works), there could be further issues you, please check the [netlify-dev](https://github.com/netlify/netlify-dev) repository for further information and set up questions. 
+>Install o NodeJS
 
 ```sh
-$ git clone https://github.com/netlify-templates/gatsby-starter-netlify-cms
-$ yarn 
+$ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+$ sudo apt-get install -y nodejs  
+```
+> Install docker on your system: [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/)
+
+> Install postgres
+```sh
+$ docker run --name database -e POSTGRES_PASSWORD=123456 -p 5432:5432 --restart always -d postgres
+```
+> Config database postgres
+```sh
+##criando a base de dados
+$ docker exec -i -t database /bin/sh
+$ su postgres
+$ psql
+$ \dt
+$ CREATE DATABASE fastfeet;
+$ CREATE USER useradmin WITH ENCRYPTED PASSWORD 'password';
+$ GRANT ALL PRIVILEGES ON DATABASE fastfeet TO useradmin;
+$ \q
+$ exit
+$ exit
 ```
 
-## Available scripts
+> Install mongodb
+```sh 
+$ docker run --name mongo -p 27017:27017 --restart always -d mongo
+```
 
+> Install redis
+```sh
+$ docker run -d \
+  -h redis \
+  -e REDIS_PASSWORD=password \
+  -v redis-data:/data \
+  -p 6379:6379 \
+  --name redis \
+  --restart always \
+  redis:alpine /bin/sh -c 'redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}' 
+```
 
-### `build`
+### `Install`
 
-Build the static files into the `public` folder, turns lambda functions into a deployable form. 
-
-#### Usage
+> Clone
 
 ```sh
-$ yarn build
+$ git clone https://github.com/Djamilson/fastfeet.git
+$ cd fastfeet
 ```
+## Dependencies
 
-### `clean`
-
-Runs `gatsby clean` command.
-
-#### Usage
+> Backend
 
 ```sh
-yarn clean
+$ cd fastfeet/backend
+$ yarn install
+$ yarn sequelize db:migrate
+$ yarn sequelize db:seed:all
+$ yarn dev
 ```
+> Config backend 
+Copie e cole o arquivo .env_exemple e renomei para .env e configure todas as variáveis
 
-### `netlify dev`
+> S3 e envio de email 
+Para o envio de email foi utilizado o serviço da AWS SES - Amazon Simple Email Service - Amazon Web: [https://aws.amazon.com/pt/ses/](https://aws.amazon.com/pt/ses/).
+É necessário a configuração para obter sucesso no recebimento das mensagens de cadastro e cancelamento de encomendas;
 
-Starts the netlify dev environment, including the gatsby dev environment.
+Também foi utilizado – Amazon Simple Storage Service (S3 ...
+[https://aws.amazon.com/pt/ses/](https://aws.amazon.com/pt/ses/), para que o projeto fique mais escalável.
+
+Todas essas variáveis devem ser configuradas no arquivo .env;
+
+
+> Projecto WEB
 
 ```sh
-netlify dev
+$ cd fastfeet/frontend
+$ yarn install
+$ yarn start
 ```
+> Config frontend
 
-### `develop` or `start`
+Dentro da pasta src/_config deve-se editar o arquivo host.js e colocar o IP do servidor/backend.
 
-Runs the `clean` script and starts the gatsby develop server using the command `gatsby develop`. We recomend using this command when you don't need Netlify specific features
-
-#### Usage
+> Projecto Mobile
 
 ```sh
-yarn develop
+$ cd fastfeet/mobile
+$ yarn install
+$ yarn react-native run-android
+$ yarn react-native start
 ```
-### `test`
-
-Not implmented yet
-
-#### Usage
-
-```sh
-yarn test
-```
-
-### `format`
-
-Formats code and docs according to our style guidelines using `prettier`
-
-#### Usage
-
-```sh
-yarn format
-```
-
-
-## Pull Requests
-
-1. Fork the repo.
-2. Create a branch from `master`. If you're addressing a specific issue, prefix your branch name with the issue number.
-2. If you've added code that should be tested, add tests.
-3. If you've changed APIs, update the documentation.
-4. Run `yarn test` and ensure the test suite passes. (Not applicable yet)
-5. Use `yarn format` to format and lint your code.
-6. PR's must be rebased before merge (feel free to ask for help).
-7. PR should be reviewed by two maintainers prior to merging.
-
-## License
 
