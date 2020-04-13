@@ -23,28 +23,6 @@ export const ContainerInput = styled.div`
 `}
 `;
 
-export const SwitchDiv = styled.fieldset`
-  width: 300px;
-
-  border: 1px solid green;
-
-  legend {
-    padding: 0.2em 0.5em;
-    border: 1px solid green;
-    color: green;
-    font-size: 90%;
-    text-align: center;
-  }
-  div {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-    line-height: 20px;
-    margin: 5px 0;
-  }
-`;
-
 export const Container = styled.div`
   display: flex;
   flex-direction: row;

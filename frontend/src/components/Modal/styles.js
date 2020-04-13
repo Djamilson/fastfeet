@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { colors, metrics, fonts } from '~/styles';
+import { colors, fonts } from '~/styles';
 
 export const Front = styled.div`
   display: flex;

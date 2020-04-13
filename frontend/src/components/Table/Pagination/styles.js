@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 import { darken } from 'polished';
 import styled from 'styled-components';
 import media from 'styled-media-query';

@@ -1,15 +1,12 @@
 import React from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { MdAdd } from 'react-icons/md';
-import Switch from 'react-switch';
 
 import PropTypes from 'prop-types';
 
-import { shade } from 'polished';
-
 import { colors } from '~/styles';
 
-import { Container, NextLink, ContainerInput, SwitchDiv } from './styled';
+import { Container, NextLink, ContainerInput } from './styles';
 
 export default function HeaderButton({
   handleChange,

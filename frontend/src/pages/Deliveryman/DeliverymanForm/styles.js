@@ -215,20 +215,6 @@ export const GroupSelects = styled.div`
     `}
 `;
 
-export const StateDiv = styled.div`
-  width: 250px;
-  padding-right: 40px;
-  ${media.lessThan('720px')`
-      margin:0px;
-      width: 100%;
-      margin-top: 10px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      margin-bottom: 0px;
-    `}
-`;
-
 export const GroupSelect = styled.div`
   width: 100%;
   margin-top: -4px;
