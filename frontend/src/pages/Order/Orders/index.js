@@ -47,7 +47,7 @@ export default function Orders() {
           page: `${pageNumber}`,
         },
       });
-      console.log('kkkk::', res.data);
+     
       setLoading(false);
       const { list: recip, orderInfo: info } = res.data;
 

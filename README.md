@@ -112,3 +112,4 @@ $ yarn react-native run-android
 $ yarn react-native start
 ```
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/20e0ae7e-7fa9-433d-aecd-087b0326ffc6/deploy-status)](https://app.netlify.com/sites/fastfeet/deploys)
