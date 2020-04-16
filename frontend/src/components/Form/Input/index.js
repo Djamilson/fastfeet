@@ -26,5 +26,4 @@ export default function Input({ name, ...rest }) {
 
 Input.propTypes = {
   name: PropTypes.string.isRequired,
-  rest: PropTypes.func.isRequired,
 };

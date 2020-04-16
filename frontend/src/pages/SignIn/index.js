@@ -38,10 +38,10 @@ export default function SignIn() {
       )}
 
       <Form schema={schema} onSubmit={handleSubmit}>
-        <label>SEU E-MAIL</label>
+        <label htmlFor="IdEmail">SEU E-MAIL</label>
         <Input name="email" type="email" placeholder="exemplo@email.com" />
 
-        <label>SEU E-MAIL</label>
+        <label htmlFor="idPassword">SUA SENHA</label>
         <Input name="password" type="password" placeholder="**********" />
 
         <button type="submit">

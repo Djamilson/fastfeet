@@ -47,7 +47,7 @@ export default function Orders() {
           page: `${pageNumber}`,
         },
       });
-     
+
       setLoading(false);
       const { list: recip, orderInfo: info } = res.data;
 

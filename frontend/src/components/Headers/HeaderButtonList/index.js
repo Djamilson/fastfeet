@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 import { colors } from '~/styles';
 
-import { Container, NextLink, ContainerInput } from './styles';
+import { Container, NextLink, ContainerInput } from './styled';
 
 export default function HeaderButton({
   handleChange,
