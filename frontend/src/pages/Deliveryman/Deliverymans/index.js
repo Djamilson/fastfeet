@@ -91,6 +91,7 @@ export default function Deliverymans() {
 
   return (
     <Background>
+      <>
       <Title>Gerenciando entregadores</Title>
       <Header
         handleChange={handleOnInputChange}
@@ -134,6 +135,7 @@ export default function Deliverymans() {
           Tem certeza que deseja {nameButton} esse entragador?
         </Modal>
       )}
+      </>
     </Background>
   );
 }

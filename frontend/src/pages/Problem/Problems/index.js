@@ -106,6 +106,7 @@ export default function Problems() {
 
   return (
     <Background>
+      <>
       <Title>Gerenciando encomendas</Title>
 
       <Table pages={problemInfo.pages} loadPage={loadPage}>
@@ -151,6 +152,7 @@ export default function Problems() {
           onDelete={() => handleDetail(problemSelect)}
         />
       )}
+      </>
     </Background>
   );
 }

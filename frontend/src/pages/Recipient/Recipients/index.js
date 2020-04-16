@@ -92,49 +92,51 @@ export default function Recipients() {
 
   return (
     <Background>
-      <Title>Gerenciando destinatários</Title>
-      <Header
-        handleChange={handleOnInputChange}
-        search={search}
-        title="Gerenciando de encomendas"
-        titleNext="CADASTRAR"
-        next="recipients/new"
-        placeholder="Buscar por destinatário"
-      />
+      <>
+        <Title>Gerenciando destinatários</Title>
+        <Header
+          handleChange={handleOnInputChange}
+          search={search}
+          title="Gerenciando de encomendas"
+          titleNext="CADASTRAR"
+          next="recipients/new"
+          placeholder="Buscar por destinatário"
+        />
 
-      <Table pages={recipientInfo.pages} loadPage={loadPage}>
-        <TitleItem />
-        <tbody>
-          {recipients.length < 1 && (
-            <tr>
-              <td colSpan={5}>
-                Não temos nenhum registro cadastrado no momento!
-              </td>
-            </tr>
-          )}
-          {recipients.map(
-            (dat) =>
-              !dat !== 'undefined' && (
-                <RowItem
-                  key={dat.id}
-                  data={dat}
-                  showDelete={() => showDelete(dat)}
-                />
-              )
-          )}
-        </tbody>
-      </Table>
-      {show && (
-        <Modal
-          onClose={() => closeDelete()}
-          show={show}
-          nameDelete={nameDelete}
-          onDelete={() => handleDelete(recipientDelete.id)}
-          nameButton={nameButton}
-        >
-          Tem certeza que deseja {nameButton} esse cliente?
-        </Modal>
-      )}
+        <Table pages={recipientInfo.pages} loadPage={loadPage}>
+          <TitleItem />
+          <tbody>
+            {recipients.length < 1 && (
+              <tr>
+                <td colSpan={5}>
+                  Não temos nenhum registro cadastrado no momento!
+                </td>
+              </tr>
+            )}
+            {recipients.map(
+              (dat) =>
+                !dat !== 'undefined' && (
+                  <RowItem
+                    key={dat.id}
+                    data={dat}
+                    showDelete={() => showDelete(dat)}
+                  />
+                )
+            )}
+          </tbody>
+        </Table>
+        {show && (
+          <Modal
+            onClose={() => closeDelete()}
+            show={show}
+            nameDelete={nameDelete}
+            onDelete={() => handleDelete(recipientDelete.id)}
+            nameButton={nameButton}
+          >
+            Tem certeza que deseja {nameButton} esse cliente?
+          </Modal>
+        )}
+      </>
     </Background>
   );
 }
