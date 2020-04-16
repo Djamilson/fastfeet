@@ -27,7 +27,7 @@ class IndexOrderService {
     });
 
     console.log('Total:', ret.count);
-    const pages = Math.floor(ret.count / pageSize);
+    const pages = Math.ceil(ret.count / pageSize);
 
     const orderInfo = { page, pages, total: ret.count, limit: pageSize };
 

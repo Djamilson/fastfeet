@@ -22,7 +22,7 @@ class IndexProblemService {
       ],
     });
 
-    const pages = Math.floor(ret.count / pageSize);
+    const pages = Math.ceil(ret.count / pageSize);
 
     const problemInfo = { page, pages, total: ret.count, limit: pageSize };
 
