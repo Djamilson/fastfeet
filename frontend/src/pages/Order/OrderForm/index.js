@@ -57,7 +57,7 @@ export default function OrderForm() {
   const [limit] = useState(2);
   const [page] = useState(1);
   const [loading, setLoading] = useState(false);
-  const [orderSelect, setOrderSelect] = useState({});
+  //const [orderSelect, setOrderSelect] = useState({});
 
   /**
    * set variavel para editar
@@ -71,7 +71,7 @@ export default function OrderForm() {
           const res = await api.get(`orders/${orderId}`);
 
           const { recipient, deliveryman } = res.data;
-          setOrderSelect(res.data);
+          //setOrderSelect(res.data);
 
           setRecipientSelect({
             value: recipient.id,
