@@ -10,7 +10,6 @@ export default function RowItem({ data, showDelete, detail, getOrderSelect }) {
   const [visible, setVisible] = useState(false);
 
   function handleToggleVisible() {
-    console.tron.log('Variavel: ', visible);
     getOrderSelect();
     setVisible(!visible);
   }
