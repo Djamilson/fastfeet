@@ -125,6 +125,7 @@ export default function Orders() {
 
   return (
     <Background>
+      <>
       <Title>Gerenciando encomendas</Title>
       <Header
         handleChange={handleOnInputChange}
@@ -195,6 +196,7 @@ export default function Orders() {
           onDelete={() => handleDetail(orderSelect)}
         />
       )}
+      </>
     </Background>
   );
 }
