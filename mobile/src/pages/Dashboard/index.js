@@ -154,8 +154,9 @@ export default function Dashboard({navigation}) {
                     display={Boolean(true)}
                   />
                 )}
-                ListFooterComponent={loading && <Loading />}
               />
+              <Toast visible={loading} message="Buscando ..." />
+
               <Toast
                 visible={visible}
                 message="Ops! Já não temos mais resgistros para buscar."
