@@ -20,7 +20,7 @@ class IndexDeliverymanService {
       ],
     });
 
-    const pages = Math.floor(ret.count / pageSize);
+    const pages = Math.ceil(ret.count / pageSize);
 
     const deliverymanInfo = { page, pages, total: ret.count, limit: pageSize };
     const deliverymans = await Deliveryman.findAll({

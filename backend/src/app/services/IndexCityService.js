@@ -10,7 +10,7 @@ class IndexCityService {
       order: [['name', 'ASC']],
     });
 
-    const pages = Math.floor(ret.count / pageSize);
+    const pages = Math.ceil(ret.count / pageSize);
 
     const cityInfo = { page, pages, total: ret.count, limit: pageSize };
 

@@ -7,7 +7,7 @@ import Phone from '../models/Phone';
 
 class IndexRecipientService {
   async run({ page, pageSize, querywhere }) {
-    
+
     const ret = await Recipient.findAndCountAll({
       limit: pageSize,
       offset: (page - 1) * pageSize,
@@ -22,7 +22,7 @@ class IndexRecipientService {
       ],
     });
 
-    const pages = Math.floor(ret.count / pageSize);
+    const pages = Math.ceil(ret.count / pageSize);
 
     const recipientInfo = { page, pages, total: ret.count, limit: pageSize };
     const recipients = await Recipient.findAll({
