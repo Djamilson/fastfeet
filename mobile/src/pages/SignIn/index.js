@@ -25,7 +25,6 @@ export default function SignIn() {
         <Form>
           <FormInput
             icon="https"
-            keyboardType="number-pad"
             autoCorrect={false}
             autoCapitalize="none"
             placeholder="Informe seu ID de cadastro"
