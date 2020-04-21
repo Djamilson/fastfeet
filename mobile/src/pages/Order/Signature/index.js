@@ -75,7 +75,6 @@ export default function Signature({navigation, route}) {
   }
 
   async function handleSubmit() {
-    Alert.alert('Opss!!', 'Essa entregue já foi realizada.');
     const data = new FormData();
 
     data.append('file', image.file);
