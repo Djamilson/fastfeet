@@ -41,7 +41,7 @@
     "express-async-errors": "^3.1.1",
     "express-async-handler": "^1.1.4",
     "express-brute-redis": "^0.0.1",
-    "express-handlebars": "^4.0.3",
+    "express-handlebars": "^5.3.1",
     "express-rate-limit": "^5.0.0",
     "express-validation": "^1.0.2",
     "helmet": "^3.21.2",
